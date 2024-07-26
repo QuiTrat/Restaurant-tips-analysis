@@ -62,7 +62,6 @@ common_values = [common_tip_min, common_tip_max, common_tip_mean, common_tip_med
 common_values = map(lambda x: round(x, 4), common_values)
 common_mct = pd.DataFrame(common_values, index=['min', 'max', 'mean', 'median'])
 common_mct
-
 ```
 ![image](https://github.com/user-attachments/assets/cf4c8094-9168-4331-99d6-9225b307ae2c)
 
@@ -94,8 +93,9 @@ all_vals_dict = {
     'Common': {'min': common_tip_min, 'max': common_tip_max, 'mean': common_tip_mean, 'median': common_tip_median},
     'Smokers': {'min': smoker_tip_min, 'max': smoker_tip_max, 'mean': smoker_tip_mean, 'median': smoker_tip_median},
     'Non-smokers': {'min': non_smokers_tip_min, 'max': non_smokers_tip_max, 'mean': non_smokers_tip_mean, 'median': non_smokers_tip_median}
-}
+
 ```
+
 We got data in the table below for the comparision of the measures of central tendency betweens smokers and non-smokers:
 
 ![image](https://github.com/user-attachments/assets/4963e019-0098-4b49-8ff6-3d4a558cd3ca)
