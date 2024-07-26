@@ -74,7 +74,7 @@ In the research, I analyse some factors that may affect to tip values:
 - Male and female
 - Dinner and Lunch
 
-### 🚬 Do people who smoke give more tips?
+### A. 🚬 Do people who smoke give more tips?
 For this analysis, I collect data of tip value for smokers and non-smokes, and calculate some measurements
 
 ```
@@ -101,6 +101,30 @@ We got data in the table below for the comparision of the measures of central te
 
 ![image](https://github.com/user-attachments/assets/4963e019-0098-4b49-8ff6-3d4a558cd3ca)
 
-Let's see the camparision by histogram:
+Let's see the comparision by histogram:
 
 ![image](https://github.com/user-attachments/assets/95e92502-dc11-4203-8369-d81bc23a3096)
+
+#### Conclusions:
+
+There is no signification signs to show smokers give more tips than non-smokers 
+
+### B. 👨👩 Do males give more tips?
+
+![image](https://github.com/user-attachments/assets/6250279c-ee29-48e9-a943-353cc590ff23)
+
+![image](https://github.com/user-attachments/assets/644223c0-809c-4d86-a6a5-c80716232c4a)
+
+
+#### Conclusions:
+
+There is no signification signs to show male give more tips than female
+
+### C.🕑 Do dinners bring more tips?
+
+![image](https://github.com/user-attachments/assets/f48a7287-9446-4254-8e2b-55f93698898d)
+
+![image](https://github.com/user-attachments/assets/c6298984-23f3-409e-bc19-fcf05a282b01)
+
+#### Conclusions:
+
