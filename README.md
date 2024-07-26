@@ -31,12 +31,12 @@ Let's take a look at the first 5 rows, you can see each observation represents a
 
 We can see information about:
 
-the day it occurred
-if it was at lunch or dinner
-the total bill
-the sex of the person
-if they were a smoker or not
-the size of the party
+- the day it occurred
+- if it was at lunch or dinner
+- the total bill
+- the sex of the person
+- if they were a smoker or not
+- the size of the party
 
 ![image](https://github.com/user-attachments/assets/08f8ea55-fd9d-47f9-9ee9-4ad4f6a18b56)
 
