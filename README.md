@@ -8,11 +8,14 @@ It includes details about the tips given to restaurant staff, such as the total 
 
 # Access data
 You can get the analysis in the attachment "Restaurant_tips_analysis.ipynbin" this  repository
+
 If you can not load the analysis in this repository, you can get the analysis on your notebook in https://colab.research.google.com by following these steps:
+ 
  📥 Data import
+    
     First, Open the Colab and let's import the needed libraries: Pandas & Matplotlib, then import data from (https://raw.githubusercontent.com/RusAbk/sca_datasets/main/tips.csv)
-   
-    > import pandas as pd
+    
+> import pandas as pd
 import matplotlib.pyplot as plt
 data = pd.read_csv('https://raw.githubusercontent.com/RusAbk/sca_datasets/main/tips.csv')
 
