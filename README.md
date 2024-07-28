@@ -15,7 +15,7 @@ You can get the analysis in the attachment "Restaurant_tips_analysis.ipynbin" th
 
 If you can not load the analysis in this repository, you can get the analysis on your notebook in https://colab.research.google.com by following these steps:
  
- 📥 ## Data import
+ 📥 ### Data import
 
  First, Open the Colab and let’s import the needed libraries: Pandas & Matplotlib, then import data from (https://raw.githubusercontent.com/RusAbk/sca_datasets/main/tips.csv)
 
@@ -25,15 +25,14 @@ import matplotlib.pyplot as plt
 data = pd.read_csv('https://raw.githubusercontent.com/RusAbk/sca_datasets/main/tips.csv')
 ```
 
-🔍 ## Data exploration
-
-```
-try these codes:
-data.head()
-data.describe()
-```
+🔍 ### Data exploration
 
 Let's take a look at the first 5 rows, you can see each observation represents a customer who left a tip at a restaurant.
+
+```
+data.head()
+```
+![image](https://github.com/user-attachments/assets/08f8ea55-fd9d-47f9-9ee9-4ad4f6a18b56)
 
 We can see information about:
 
@@ -44,11 +43,27 @@ We can see information about:
 - if they were a smoker or not
 - the size of the party
 
-![image](https://github.com/user-attachments/assets/08f8ea55-fd9d-47f9-9ee9-4ad4f6a18b56)
+Before continuing take a look at a few rows of the data and use info and describe to analyze dataset column types and values.
 
-Basic descriptive statistics
+### Column types checking
+Show the columns of the dataframe and their types:
+```
+data.info()
+```
+![image](https://github.com/user-attachments/assets/7c9280f8-16c6-4b13-b1b1-a4d2ae124656)
+
+We have string columns considered as objects. Let's fix their types and make them string:
+
+```
+data=data.convert_dtypes()
+data.info()
+```
+![image](https://github.com/user-attachments/assets/bcdf38f1-2f7e-49b3-8bb6-d4567e5386cf)
+
+### Basic descriptive statistics
 
 ![image](https://github.com/user-attachments/assets/fbb6080d-1fcc-449e-a0c2-72abc9c85c4f)
+
 
 #### Other measures of central tendency for the whole dataset
 
@@ -58,7 +73,8 @@ common_tip_max=data['tip'].max()
 common_tip_mean=data['tip'].mean()
 common_tip_median=data['tip'].median()
 
-# Make a list of values
+### Make a list of values:
+
 common_values = [common_tip_min, common_tip_max, common_tip_mean, common_tip_median]
 common_values = map(lambda x: round(x, 4), common_values)
 common_mct = pd.DataFrame(common_values, index=['min', 'max', 'mean', 'median'])
@@ -67,14 +83,14 @@ common_mct
 
 ![image](https://github.com/user-attachments/assets/cf4c8094-9168-4331-99d6-9225b307ae2c)
 
-## 2. Tip value influencers
+# 2. Tip value influencers
 
 In the research, I analyse some factors that may affect to tip values:
 - Smokers and Non-smokers
 - Male and female
 - Dinner and Lunch
 
-### A. 🚬 Do people who smoke give more tips?
+## A. 🚬 Do people who smoke give more tips?
 For this analysis, I collect data of tip value for smokers and non-smokes, and calculate some measurements
 
 ```
@@ -109,7 +125,8 @@ Let's see the comparision by histogram:
 
 There is no signification signs to show smokers give more tips than non-smokers 
 
-### B. 👨👩 Do males give more tips?
+
+## B. 👨👩 Do males give more tips?
 
 ![image](https://github.com/user-attachments/assets/6250279c-ee29-48e9-a943-353cc590ff23)
 
@@ -120,7 +137,7 @@ There is no signification signs to show smokers give more tips than non-smokers
 
 There is no signification signs to show male give more tips than female
 
-### C.🕑 Do dinners bring more tips?
+## C.🕑 Do dinners bring more tips?
 
 ![image](https://github.com/user-attachments/assets/f48a7287-9446-4254-8e2b-55f93698898d)
 
