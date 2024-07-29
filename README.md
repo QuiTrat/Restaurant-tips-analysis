@@ -232,12 +232,86 @@ axis[2].grid(True)
 
 There is no signification signs to show male give more tips than female
 
-## C. 🕑 Do dinners bring more tips?
+## C. 📆 Do weekends bring more tips?
 
 I do the same above steps to analyse whether Males give more tips than Females
 
 ```
-##### Create data for male and female
+##### Create data for weekend and weekday:
+
+weekend_df=data[data['day'].isin(['Sat','Sun'])]
+weekday_df=data[data['day'].isin(['Mon','Tue','Wed','Thur','Fri'])]
+
+##### Calculate measurements for male and female:
+
+weekend_tip_min=weekend_df['tip'].min()
+weekend_tip_max=weekend_df['tip'].max()
+weekend_tip_mean=weekend_df['tip'].mean()
+weekend_tip_median=weekend_df['tip'].median()
+
+weekday_tip_min=weekday_df['tip'].min()
+weekday_tip_max=weekday_df['tip'].max()
+weekday_tip_mean=weekday_df['tip'].mean()
+weekday_tip_median=weekday_df['tip'].median()
+
+all_vals_dict = {
+    'Common': {'min': common_tip_min, 'max': common_tip_max, 'mean': common_tip_mean, 'median': common_tip_median},
+    'Weekend': {'min': weekend_tip_min, 'max': weekend_tip_max, 'mean': weekend_tip_mean, 'median': weekend_tip_median},
+    'Weekday': {'min': weekday_tip_min, 'max': weekday_tip_max, 'mean': weekday_tip_mean, 'median': weekday_tip_median}
+}
+
+# Make a dataframe
+all_mct = pd.DataFrame(all_vals_dict)
+# Output the dataframe
+all_mct.to_markdown()
+
+```
+
+|        |   Common |   Weekend |   Weekday |
+|:-------|---------:|----------:|----------:|
+| min    |  1       |   1       |   1       |
+| max    | 10       |  10       |   6.7     |
+| mean   |  2.99828 |   3.11528 |   2.76284 |
+| median |  2.9     |   3       |   2.5     |
+
+
+Let's see the comparision by histogram:
+
+```
+#### create the histogram
+
+fig, axis = plt.subplots(1,3,figsize=(15,5))
+axis[0].hist(data.tip,bins=5,color='#74b9ff')
+axis[0].set_xlabel('Tip value')
+axis[0].set_ylabel('Frequency')
+axis[0].set_title('Whole dataset tip values')
+axis[0].grid(True)
+
+axis[1].hist(weekend_df.tip,bins=5,color='#ff7675')
+axis[1].set_xlabel('Tip value')
+axis[1].set_ylabel('Frequency')
+axis[1].set_title('Weekend tip values')
+axis[1].grid(True)
+
+axis[2].hist(weekday_df.tip,bins=5,color='#55efc4')
+axis[2].set_xlabel('Tip value')
+axis[2].set_ylabel('Frequency')
+axis[2].set_title('Weekday tip values')
+axis[2].grid(True)
+```
+![image](https://github.com/user-attachments/assets/7cbfb089-ffab-4edf-a46d-542781ecb5c5)
+
+
+#### Conclusions:
+
+There is no signification signs to show customers give more tips in weekend than weekday 
+
+## D. 🕑 Do dinners bring more tips?
+
+I do the same above steps to analyse whether Males give more tips than Females
+
+```
+##### Create data for Dinner and Lunch
 
 dinner_df=data[data['time']=='Dinner']
 lunch_df=data[data['time']=='Lunch']
@@ -253,12 +327,6 @@ lunch_tip_min=lunch_df['tip'].min()
 lunch_tip_max=lunch_df['tip'].max()
 lunch_tip_mean=lunch_df['tip'].mean()
 lunch_tip_median=lunch_df['tip'].median()
-
-all_vals_dict = {
-    'Common': {'min': common_tip_min, 'max': common_tip_max, 'mean': common_tip_mean, 'median': common_tip_median},
-    'Male': {'min': male_tip_min, 'max': male_tip_max, 'mean': male_tip_mean, 'median': male_tip_median},
-    'Female': {'min': female_tip_min, 'max': female_tip_max, 'mean': female_tip_mean, 'median': female_tip_median}
-}
 
 all_vals_dict = {
     'Common': {'min': common_tip_min, 'max': common_tip_max, 'mean': common_tip_mean, 'median': common_tip_median},
@@ -306,4 +374,6 @@ axis[2].grid(True)
 
 #### Conclusions:
 
-There is no signification signs to show smokers give more tips than non-smokers 
+There is no signification signs to show customers who have dinner give more tips than lunch 
+
+
