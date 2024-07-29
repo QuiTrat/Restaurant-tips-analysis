@@ -15,7 +15,7 @@ You can get the analysis in the attachment "Restaurant_tips_analysis.ipynbin" th
 
 If you can not load the analysis in this repository, you can get the analysis on your notebook in https://colab.research.google.com by following these steps:
  
- 📥 ### Data import
+ ### 📥 Data import
 
  First, Open the Colab and let’s import the needed libraries: Pandas & Matplotlib, then import data from (https://raw.githubusercontent.com/RusAbk/sca_datasets/main/tips.csv)
 
@@ -25,7 +25,7 @@ import matplotlib.pyplot as plt
 data = pd.read_csv('https://raw.githubusercontent.com/RusAbk/sca_datasets/main/tips.csv')
 ```
 
-🔍 ### Data exploration
+### 🔍 Data exploration
 
 Let's take a look at the first 5 rows, you can see each observation represents a customer who left a tip at a restaurant.
 
@@ -156,7 +156,6 @@ axis[2].grid(True)
 
 ![image](https://github.com/user-attachments/assets/95e92502-dc11-4203-8369-d81bc23a3096)
 
-
 #### Conclusions:
 
 There is no signification signs to show smokers give more tips than non-smokers 
@@ -233,7 +232,7 @@ axis[2].grid(True)
 
 There is no signification signs to show male give more tips than female
 
-## C.🕑 Do dinners bring more tips?
+## C. 🕑 Do dinners bring more tips?
 
 I do the same above steps to analyse whether Males give more tips than Females
 
@@ -305,7 +304,6 @@ axis[2].grid(True)
 
 ![image](https://github.com/user-attachments/assets/c6298984-23f3-409e-bc19-fcf05a282b01)
 
-
-
 #### Conclusions:
 
+There is no signification signs to show smokers give more tips than non-smokers 
